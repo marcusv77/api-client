@@ -7,7 +7,7 @@ export interface IClientsRepository {
   findById(id: number): Promise<IClient | undefined>;
   findByCpf(cpf: string): Promise<IClient | undefined>;
   remove(id: number): Promise<number>;
-  update(user: IClient): Promise<IClient>;
+  update(user: IClient): Promise<number>;
 }
 
 class ClientRepository implements IClientsRepository{
@@ -26,24 +26,24 @@ class ClientRepository implements IClientsRepository{
   }
   
   public async findById(id: number): Promise<IClient | undefined> {
-    const client:IClient = await db('clients').where('id', id).first();    
+    const client = await db('clients').where('id', id).first();
     return client;
   }
 
   public async findByCpf(cpf: string): Promise<IClient | undefined> {
-    const client:IClient = await db('clients').where('cpf', cpf).first();    
+    const client = await db('clients').where('cpf', cpf).first();  
     return client;
   }
 
   public async remove(id:number): Promise<number> {
-    const client = await db('clients').where('id', id).first().delete();    
-    return client;
+    const confNum = await db('clients').where('id', id).first().delete();    
+    return confNum;
   }
 
-  public async update(user: IClient): Promise<IClient> {
+  public async update(user: IClient): Promise<number> {
     const id = user.id;
-    const client:IClient = await db('clients').where('id', id).first().update(user);    
-    return client;  
+    const confNum = await db('clients').where('id', id).first().update(user);    
+    return confNum;  
   }  
 }
 
