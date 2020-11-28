@@ -1,9 +1,10 @@
 import {Request, Response} from 'express';
-import db from '../../database/connections';
+import ClientRepository from '../../repositories/ClientRepository';
 
 class ListClients{
   public async handle(request:Request, response:Response) {
-    const clients = await db('clients');
+    const clientRepository = new ClientRepository();  
+    const clients = await clientRepository.listClients();
     return response.json(clients); 
   }
 }

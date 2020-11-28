@@ -7,10 +7,10 @@ import DeleteClient from './controllers/Clients/DeleteClient';
 
 const routes = express.Router();
 
-routes.post('/api/clients', CreateClient.handle);
+routes.post('/api/client', CreateClient.handle);
 routes.get('/api/clients', ListClients.handle);
-routes.get('/api/client/:d', ListClient.handle);
-routes.get('/api/clients/:d', UpdateClient.handle);
-routes.get('/api/clients/:d', DeleteClient.handle);
+routes.get('/api/client/:id', ListClient.handle);
+routes.put('/api/client/:id', UpdateClient.handle);
+routes.delete('/api/client/:id', DeleteClient.handle);
 
 export default routes;

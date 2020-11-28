@@ -1,5 +1,5 @@
 export interface IClient {
-  id: string;
+  id: number;
   name: string;
   address: string;
   phone: string;
@@ -8,7 +8,7 @@ export interface IClient {
 }
 
 export interface IRequestCreateClient {
-  name: number;
+  name: string;
   address: string;
   phone: string;
   email: string;
