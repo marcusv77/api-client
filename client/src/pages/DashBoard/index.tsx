@@ -1,16 +1,15 @@
 import React from 'react';
-import {Paragraph, Container} from '../../components/global';
+import {Container, Paragraph, Obs} from '../../components/global';
 import Header from '../../components/Header'
 import Table from '../../components/Table'
-import './styles.css';
 
 function Dashboard() {
   return (
     <div className="Dashboard">
-      <Header title="CONTROLE DE CLIENTES" buttonContent="Cadastrar" />
+      <Header title="CONTROLE DE CLIENTES" buttonContent="CADASTRAR" />
       <Container>
         <Paragraph>Seja bem vindo a plataforma!</Paragraph>
-        <Paragraph>Obs: Clique em um cliente específico para viualizar sua informações completas.</Paragraph>
+        <Obs>Obs: Clique em um cliente específico para viualizar sua informações completas.</Obs>
         <Table />
       </Container>
     </div>

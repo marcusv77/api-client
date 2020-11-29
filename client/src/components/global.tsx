@@ -1,19 +1,29 @@
 import styled from 'styled-components';
-import {TextField, Button} from '@material-ui/core';
-import logo from '../assets/images/logo.png';
+import {TextField} from '@material-ui/core';
+import edit from '../assets/icons/edit.png';
+import remove from '../assets/icons/remove.png';
 
-//IMAGENS
+//IMAGES
 
-export const Logo = styled.img.attrs({
-  src: logo,
+export const Edit = styled.img.attrs({
+  src: edit,
 })`
-  width: 100px;
-  height: 100px;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
   align-self: center;
-  margin: 10px;
 `;
 
-//TEXTOS
+export const Remove = styled.img.attrs({
+  src: remove,
+})`
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  align-self: center;
+`;
+
+//TEXTS
 
 export const Title = styled.h1`
   font-weight: normal;
@@ -29,7 +39,15 @@ export const SubTitle = styled.h2`
   color: #FFFFFF;
 `;
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.h2`
+  font-weight: normal;
+  text-align: left;
+  margin-bottom: 25px;
+  color: #FFFFFF;
+`;
+
+export const Obs = styled.p`
+  font-weight: normal;
   text-align: left;
   margin-bottom: 25px;
   color: #FFFFFF;
@@ -60,7 +78,7 @@ export const Section = styled.div`
 export const Header = styled(Section)`
   align-items: center;
   justify-content: space-between;
-  background-color: blue;
+  background-color: #27293D;
 `;
 
 export const Table = styled.div`
@@ -72,13 +90,6 @@ export const Table = styled.div`
 //INPUTS
 
 export const Input = styled(TextField).attrs({
-  style: {flex: 1, marginBottom: 30},
-})`
-`;
-
-//BUTTONS
-
-export const MainButton = styled(Button).attrs({
-  style: {marginTop: 5, marginBottom: 5, padding: 5, width:'auto'},
+  style: {flex: 1, marginLeft: 5, marginRight: 5, marginBottom: 30},
 })`
 `;

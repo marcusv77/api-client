@@ -1,19 +1,34 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
+import {Edit, Remove} from '../../global'
 import Column from '../Column';
 import './styles.css';
 
 const LineContent = () => {
 
+  const history = useHistory();
+
+  function handleView(){
+    history.push('/client');
+  }
+
+  function handleEdit(){
+    history.push('/client');
+  }
+
+  function handleDelete(){
+  }
+
   return (
     <div className="line">
-      <div className="tableline">
-        <Column />
-        <Column />
-        <Column />
-      </div>
+      <a onClick={handleView} className="tableline">
+        <Column name="Teste" />
+        <Column name="Teste" />
+        <Column name="Teste" />
+      </a>
       <div className="icons">
-        <a>I</a>
-        <a>X</a>
+        <a onClick={handleEdit}><Edit /></a>
+        <a onClick={handleDelete}><Remove /></a>
       </div>
     </div>
   );

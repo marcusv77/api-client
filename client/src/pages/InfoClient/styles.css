@@ -1,0 +1,24 @@
+.client {
+  height: 100vh;
+}
+
+.client a{
+  width: 5%;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.client .couple{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 900px){
+  .client .couple{
+    flex-direction: column;
+    justify-content: center;
+  }
+}

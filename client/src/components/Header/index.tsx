@@ -1,7 +1,6 @@
 import React from 'react';
 import {Header, HeaderText} from '../global';
 import ButtonTransparent from '../ButtonTransparent';
-import './styles.css';
 
 interface ContainerProps{
   title: string;
@@ -10,10 +9,14 @@ interface ContainerProps{
 
 const HeaderSection = ({title, buttonContent}:ContainerProps) => {
 
+  const exist = ((buttonContent==='SALVAR') || ( buttonContent==='CADASTRAR'))? true : false;
+
   return (
     <Header>
       <HeaderText>{title}</HeaderText>
-      <ButtonTransparent buttonContent={buttonContent} />
+      {exist&&
+        <ButtonTransparent buttonContent={buttonContent} />
+      }
     </Header>
   );
 }

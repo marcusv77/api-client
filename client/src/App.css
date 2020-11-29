@@ -9,10 +9,25 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track{
+  background-color: var(--cor-background);
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--cor-background);
+}
+::-webkit-scrollbar-thumb{
+  background: var(--cor-onBackground);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: var(--cor-border-camps);
+}
+
 :root{
   /*Background color var*/
   --cor-background: #1E1E28;
-  --cor-onBackground: #30416A;
+  --cor-onBackground: #27293D;
 
   /*Shadow color var*/
   --cor-shadow: #0d1324;
@@ -26,14 +41,15 @@
   --cor-grey-text: #A5A7A4;
   --cor-blue-text: #1D72F8;
 
+  /*Interact color var*/
+  --cor-green-nqr: #38931C;
+  --cor-red-nqr: ##DF0B1D;
+
   /*Text size var*/
   --text-title: 18px;
   --text-subTitle: 15px;
   --text-results: 15px;
   --text-comom: 13px;
-
-  /*Button color var*/
-  --cor-shadow: #2B3857;
 }
 
 a:hover{
@@ -41,7 +57,6 @@ a:hover{
 }
 
 .app{
-  height: 100vh;
   display: flex;
   background-color: var(--cor-background);
 }

@@ -1,11 +1,14 @@
 import React from 'react';
 import './styles.css';
 
-const ColumnContent = () => {
+interface ColumnProps{
+  name: string;
+}
 
+const ColumnContent = ({name}:ColumnProps) => {
   return (
     <div className="tablecolumn">
-      <p>CUuuuuuuuuuuuuuuuu</p>
+      <p>{name}</p>
     </div>
   );
 }

@@ -7,8 +7,18 @@ interface ContainerProps{
 
 const HeaderSection = ({buttonContent}:ContainerProps) => {
 
+  function handleCreate(){
+
+  }
+
+  function handleUpdate(){
+    
+  }
+
+  const action = buttonContent==='CADASTRAR'? handleCreate : handleUpdate;
+
   return (
-      <button onClick={() => {}}>{buttonContent}</button>
+    <button onClick={action}>{buttonContent}</button>
   );
 }
 
