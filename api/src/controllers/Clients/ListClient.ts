@@ -6,7 +6,7 @@ class ListClient{
     const id = parseInt(request.params.id);
     const clientRepository = new ClientRepository();
     const client = await clientRepository.findById(id);
-    if(!client){
+    if(client === undefined){
       return response.status(400).json({
         error: 'Client do not exists'
       });

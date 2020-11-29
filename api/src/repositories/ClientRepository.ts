@@ -31,7 +31,7 @@ class ClientRepository implements IClientsRepository{
   }
 
   public async findByCpf(cpf: string): Promise<IClient | undefined> {
-    const client = await db('clients').where('cpf', cpf).first();  
+    const client = await db('clients').where('cpf', cpf).first();
     return client;
   }
 
