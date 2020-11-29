@@ -1,5 +1,5 @@
 .tablecolumn{
-  flex: 1;
+  width: 33.3%;
   display: flex;
   align-self: flex-start;
   padding-left: 20px;
@@ -14,4 +14,13 @@
 
 .tablecolumn p{
   color: var(--cor-white-text);
+}
+
+@media screen and (max-width: 950px){
+  .tablecolumn{
+    width: 100%;
+  }
+  .hide{
+    display: none!important;
+  }
 }

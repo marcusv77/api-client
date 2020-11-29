@@ -1,3 +1,4 @@
+import { colors } from '@material-ui/core';
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Container, Input} from '../../components/global';
@@ -30,6 +31,7 @@ function Client() {
             placeholder="Digite seu nome"
             label="Nome"
             value={name}
+            style={{color: 'white'}}
             onChange={(event) => setName(event.target.value)}
           />
           <Input

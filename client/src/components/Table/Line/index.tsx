@@ -23,8 +23,8 @@ const LineContent = () => {
     <div className="line">
       <a onClick={handleView} className="tableline">
         <Column name="Teste" />
-        <Column name="Teste" />
-        <Column name="Teste" />
+        <Column name="Teste" className="hide" />
+        <Column name="Teste" className="hide" />
       </a>
       <div className="icons">
         <a onClick={handleEdit}><Edit /></a>

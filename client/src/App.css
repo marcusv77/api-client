@@ -44,12 +44,6 @@
   /*Interact color var*/
   --cor-green-nqr: #38931C;
   --cor-red-nqr: ##DF0B1D;
-
-  /*Text size var*/
-  --text-title: 18px;
-  --text-subTitle: 15px;
-  --text-results: 15px;
-  --text-comom: 13px;
 }
 
 a:hover{

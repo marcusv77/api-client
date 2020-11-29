@@ -18,3 +18,21 @@ button{
 button:hover{
   opacity: 0.9;
 }
+
+@media screen and (max-width: 550px){
+  button{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 450px){
+  button{
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}

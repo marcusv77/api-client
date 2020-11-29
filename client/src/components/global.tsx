@@ -33,6 +33,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h2`
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
   padding: 5px;
@@ -40,6 +41,7 @@ export const SubTitle = styled.h2`
 `;
 
 export const Paragraph = styled.h2`
+  font-size: 18px;
   font-weight: normal;
   text-align: left;
   margin-bottom: 25px;
@@ -47,6 +49,7 @@ export const Paragraph = styled.h2`
 `;
 
 export const Obs = styled.p`
+  font-size: 15px;
   font-weight: normal;
   text-align: left;
   margin-bottom: 25px;
@@ -65,7 +68,7 @@ export const Container = styled.div`
   flex: 1;
   flex-direction: column;
   align-self: center;
-  padding: 40px;
+  padding: 30px;
 `;
 
 export const Section = styled.div`
@@ -89,7 +92,5 @@ export const Table = styled.div`
 
 //INPUTS
 
-export const Input = styled(TextField).attrs({
-  style: {flex: 1, marginLeft: 5, marginRight: 5, marginBottom: 30},
-})`
+export const Input = styled(TextField)`
 `;

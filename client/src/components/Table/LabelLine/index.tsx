@@ -4,12 +4,20 @@ import './styles.css';
 
 const LabelLine = () => {
 
+  const screen = window.screen;
+
   return (
     <div className="line">
       <div className="tableline">
-        <Label name="Nome" />
-        <Label name="Email" />
-        <Label name="Telefone" />
+      {screen.width>950?
+          <>
+            <Label name="Teste" />
+            <Label name="Teste" />
+            <Label name="Teste" />
+          </>
+          :
+          <Label name="Teste" />
+        }
       </div>
     </div>
   );

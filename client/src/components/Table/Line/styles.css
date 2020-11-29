@@ -28,3 +28,13 @@
   align-self: center;
   cursor: pointer;
 }
+
+@media screen and (max-width: 950px){
+  .line .tableline{
+    width: 70%!important;
+  }
+  
+  .line .icons{
+    width: 30%!important;
+  }
+}

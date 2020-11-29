@@ -3,11 +3,12 @@ import './styles.css';
 
 interface ColumnProps{
   name: string;
+  className?: string;
 }
 
-const ColumnContent = ({name}:ColumnProps) => {
+const ColumnContent = ({name, className}:ColumnProps) => {
   return (
-    <div className="tablecolumn">
+    <div className={"tablecolumn " + className}>
       <p>{name}</p>
     </div>
   );
