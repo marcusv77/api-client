@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="./image/restful.png" alt="APIRESTful" width="280"/>
+   <img src="./image/restful.png" alt="APIRESTful" width="400"/>
 </p>
 
 <p align="center">	
