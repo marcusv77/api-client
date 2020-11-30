@@ -14,7 +14,7 @@ function Dashboard() {
 
   return (
     <div className="Dashboard">
-      <Header title="CONTROLE" buttonContent="NOVO" action={handleCreate} />
+      <Header title="CONTROLE" buttonContent="NOVO" onClick={handleCreate} />
       <Container>
         <Paragraph>Seja bem vindo a plataforma!</Paragraph>
         <Obs>Obs: Clique em um cliente específico para viualizar sua informações completas.</Obs>

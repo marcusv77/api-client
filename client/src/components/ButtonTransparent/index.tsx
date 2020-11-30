@@ -3,13 +3,13 @@ import './styles.css';
 
 interface ContainerProps{
   buttonContent: string;
-  action?: (any?:any) => void;
+  onClick?: (any?:any) => void;
 }
 
-const HeaderSection = ({buttonContent, action}:ContainerProps) => {
+const HeaderSection = ({buttonContent, onClick}:ContainerProps) => {
 
   return (
-    <button onClick={action}>{buttonContent}</button>
+    <button onClick={onClick}>{buttonContent}</button>
   );
 }
 

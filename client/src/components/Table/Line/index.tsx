@@ -31,6 +31,8 @@ const LineContent = ({client}:PropsClient) => {
 
   async function handleDelete(client: IClient){
     const clientDeleted = await deleteClient(client);
+    console.log(clientDeleted);
+    //set array
   }
 
   return (

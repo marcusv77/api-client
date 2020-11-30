@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useHistory, useLocation} from 'react-router-dom';
 import {Container, Input} from '../../components/global';
 import Header from '../../components/Header';
@@ -31,7 +31,7 @@ function Client() {
     history.push('/');
   }
 
-  const handleCreate = useCallback(async () => {
+  async function handleCreate (){
     const data = {
       name,
       address,
@@ -40,10 +40,12 @@ function Client() {
       phone
     }
     const client = await createClient(data);
+    console.log(client);
     //set array
-  }, [name, address, email, cpf, phone]);
+    //history.push('/');
+  }
 
-  const handleUpdate = useCallback(async () => {
+  async function handleUpdate(){
     const data = {
       id: state?.data?.client?.id,
       name,
@@ -53,32 +55,36 @@ function Client() {
       phone
     }
     const client = await updateClient(data);
+    console.log(client);
     //set array
-  }, [state?.data?.client?.id, name, address, email, cpf, phone]);
-
-  const [title, setTitle] = useState<string>('ATUALIZAR');
-  const [buttonContent, setButtonContent] = useState<string>('CADASTRAR');
-  const [actionFunction, setActionFunction] = useState<() => {}|undefined>(handleUpdate);
-
-  /*
-  if(action === "VISUALIZAR"){
-    setTitle("VISUALIZAÇÃO");
-    setButtonContent('');
-    setActionFunction(undefined);
-  } else if(action === "SALVAR"){
-    setTitle("EDIÇÃO");
-    setButtonContent('SALVAR');
-    setActionFunction(handleUpdate);
-  } else {
-    setTitle("CADASTRO");
-    setButtonContent('CADASTRAR');
-    setActionFunction(handleCreate);
+    //history.push('/');
   }
-  */
+
+  const [title, setTitle] = useState<string>('');
+  const [buttonContent, setButtonContent] = useState<string>('');
+  const [actionFunction, setActionFunction] = useState<() => void>(() => {});
+  
+  useEffect(() => {
+    if(action === "VISUALIZAR"){
+      setTitle("VISUALIZAÇÃO");
+      setButtonContent('');
+      setActionFunction(() => {});
+    } else if(action === "SALVAR"){
+      setTitle("EDIÇÃO");
+      setButtonContent('SALVAR');
+      setActionFunction(handleUpdate);
+    } else {
+      setTitle("CADASTRO");
+      setButtonContent('CADASTRAR');
+      setActionFunction(handleCreate);
+    }  
+  }, [action, setTitle, setButtonContent, setActionFunction]);
+
+  console.log(actionFunction);
 
   return (
     <div className="client">
-      <Header title={title} buttonContent={buttonContent} action={actionFunction} />
+      <Header title={title} buttonContent={buttonContent} onClick={() => actionFunction} />
       <Container>
         <a onClick={handleBack}>Voltar</a>
         <div className="couple">

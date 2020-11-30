@@ -15,6 +15,7 @@ const TableContent = () => {
       setClients(list);
     }
     handleList();
+    //set array with context
   }, [setClients]);
 
   return (
@@ -22,7 +23,7 @@ const TableContent = () => {
       <LabelLine />
 
       {clients.map((client) => (
-        <Line client={client} />
+        <Line key={client.id} client={client} />
       ))}
 
     </Table>

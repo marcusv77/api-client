@@ -5,10 +5,10 @@ import ButtonTransparent from '../ButtonTransparent';
 interface ContainerProps{
   title: string;
   buttonContent: string;
-  action?: (any?:any) => void;
+  onClick?: (any?:any) => void;
 }
 
-const HeaderSection = ({title, buttonContent, action}:ContainerProps) => {
+const HeaderSection = ({title, buttonContent, onClick}:ContainerProps) => {
 
   const exist = ((buttonContent==='SALVAR') || ( buttonContent==='NOVO') || ( buttonContent==='CADASTRAR'))? true : false;
 
@@ -16,7 +16,7 @@ const HeaderSection = ({title, buttonContent, action}:ContainerProps) => {
     <Header>
       <HeaderText>{title}</HeaderText>
       {exist&&
-        <ButtonTransparent buttonContent={buttonContent} action={action} />
+        <ButtonTransparent buttonContent={buttonContent} onClick={onClick} />
       }
     </Header>
   );
