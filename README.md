@@ -4,9 +4,9 @@
 
 <p align="center">	
    <a href="https://www.linkedin.com/in/marcus-fernandes-f77/">
-      <img alt="Marcus Fernandes" src="https://img.shields.io/badge/marcus-fernandes-f77?style=flat&logo=Linkedin&logoColor=30416A" />
+      <img alt="Marcus Fernandes" src="https://img.shields.io/badge/Marcus-LinkedIn-30416A?style=flat&logo=linkedin&labelColor=30416A" />
    </a>
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcusv77/api-rest?color=30416A">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcusv77/api-client?color=30416A&label=Respo%20size">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-30416A">
 </p>
 
