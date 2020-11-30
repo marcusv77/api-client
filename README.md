@@ -1,10 +1,12 @@
 
-# Features
+## Features
 
-* Simple scope project to show the mastery of the technologies listed below, following the commands proposed by the DTI company.
 * Client application and RESTful API for creating a CRUD interface.
+* Simple scope project to show the mastery of the technologies listed below, following the commands proposed by the DTI company.
 
-# Technologies
+---
+
+## Technologies
 This project was made using the follow technologies:
 
 * [Typescript](https://www.typescriptlang.org/)      
@@ -12,7 +14,9 @@ This project was made using the follow technologies:
 * [Node](https://nodejs.org/pt-br/)       
 * [Express](https://expressjs.com/)      
 
-# How to run
+---
+
+## How to run
 ```bash
 # Clone Repository
 $ git clone https://github.com/marcusv77/api-client.git
@@ -45,7 +49,9 @@ $ yarn start or npm start
 ```
 Go to http://localhost:3000/ to see the result.
 
-# License
+---
+
+## License
 
 Released in 2020 License
 This project is under the [MIT license](./LICENSE).
