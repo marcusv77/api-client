@@ -1,8 +1,28 @@
+<p align="center">
+   <img src="./image/restful.png" alt="APIRESTful" width="280"/>
+</p>
+
+<p align="center">	
+   <a href="https://www.linkedin.com/in/marcus-fernandes-f77/">
+      <img alt="Marcus Fernandes" src="https://img.shields.io/badge/marcus-fernandes-f77?style=flat&logo=Linkedin&logoColor=30416A" />
+   </a>
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/marcusv77/api-rest?color=30416A">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-30416A">
+</p>
+
 
 ## Features
 
 * Client application and RESTful API for creating a CRUD interface.
 * Simple scope project to show the mastery of the technologies listed below, following the commands proposed by the DTI company.
+
+---
+
+## Prototype
+
+A prototype was made to guide the development of the application, click on the link to view the layout:
+
+* [Figma](https://www.figma.com/file/uMKs0lXrVbmK06mprE0QuR/Crud-Clients?node-id=0%3A1)
 
 ---
 
