@@ -34,7 +34,8 @@ This project was made using the follow technologies:
 * [Typescript](https://www.typescriptlang.org/)      
 * [React](https://reactjs.org/)      
 * [Node](https://nodejs.org/pt-br/)       
-* [Express](https://expressjs.com/)      
+* [Express](https://expressjs.com/)  
+* [Sqlite3] (https://www.sqlite.org/index.html/)
 
 ---
 
