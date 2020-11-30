@@ -35,7 +35,7 @@ This project was made using the follow technologies:
 * [React](https://reactjs.org/)      
 * [Node](https://nodejs.org/pt-br/)       
 * [Express](https://expressjs.com/)  
-* [Sqlite3] (https://www.sqlite.org/index.html/)
+* [Sqlite3](https://sqlite.com/)
 
 ---
 
