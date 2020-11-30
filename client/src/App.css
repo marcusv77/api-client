@@ -51,6 +51,7 @@ a:hover{
 }
 
 .app{
+  height: 100vh;
   display: flex;
   background-color: var(--cor-background);
 }

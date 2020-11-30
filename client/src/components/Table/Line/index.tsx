@@ -1,34 +1,48 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {useHistory} from 'react-router-dom';
 import {Edit, Remove} from '../../global'
 import Column from '../Column';
+import {IClient, deleteClient} from '../../../services/client';
 import './styles.css';
 
-const LineContent = () => {
+interface PropsClient{
+  client: IClient;
+}
+
+const LineContent = ({client}:PropsClient) => {
 
   const history = useHistory();
 
-  function handleView(){
-    history.push('/client');
-  }
+  const handleView = useCallback(async (client:IClient)=> {
+    const data = {
+      client,
+      action: "VISUALIZAR"
+    }
+    history.push('/client', {data});
+  },[history]);
 
-  function handleEdit(){
-    history.push('/client');
-  }
+  const handleEdit = useCallback(async (client:IClient)=> {
+    const data = {
+      client,
+      action: "SALVAR"
+    }
+    history.push('/client', {data});
+  },[history]);
 
-  function handleDelete(){
+  async function handleDelete(client: IClient){
+    const clientDeleted = await deleteClient(client);
   }
 
   return (
     <div className="line">
-      <a onClick={handleView} className="tableline">
-        <Column name="Teste" />
-        <Column name="Teste" className="hide" />
-        <Column name="Teste" className="hide" />
+      <a onClick={() => handleView(client)} className="tableline">
+        <Column name={client?.name} />
+        <Column name={client?.email} className="hide" />
+        <Column name={client?.phone} className="hide" />
       </a>
       <div className="icons">
-        <a onClick={handleEdit}><Edit /></a>
-        <a onClick={handleDelete}><Remove /></a>
+        <a onClick={() => handleEdit(client)}><Edit /></a>
+        <a onClick={() => handleDelete(client)}><Remove /></a>
       </div>
     </div>
   );

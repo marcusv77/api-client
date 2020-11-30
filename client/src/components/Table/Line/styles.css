@@ -31,10 +31,30 @@
 
 @media screen and (max-width: 950px){
   .line .tableline{
-    width: 70%!important;
+    width: 80%;
   }
   
   .line .icons{
-    width: 30%!important;
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .line .tableline{
+    width: 70%;
+  }
+  
+  .line .icons{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 370px){
+  .line .tableline{
+    width: 60%;
+  }
+  
+  .line .icons{
+    width: 40%;
   }
 }

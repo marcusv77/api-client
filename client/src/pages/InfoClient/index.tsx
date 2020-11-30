@@ -1,28 +1,84 @@
-import { colors } from '@material-ui/core';
-import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, {useCallback, useState} from 'react';
+import {useHistory, useLocation} from 'react-router-dom';
 import {Container, Input} from '../../components/global';
 import Header from '../../components/Header';
+import {IClient, createClient, updateClient} from '../../services/client';
 import './styles.css';
+
+interface Data{
+  data: {
+    client: IClient;
+    action: string;
+  }
+}
 
 function Client() {
 
   const history = useHistory();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [cpf, setCpf] = useState('');
-  const [phone, setPhone] = useState('');
+  const {state} = useLocation<Data>();
 
+  const client = state?.data?.client;
+  const action = state?.data?.action;
+
+  const [name, setName] = useState<string>(client?.name);
+  const [email, setEmail] = useState(client?.email);
+  const [address, setAddress] = useState(client?.address);
+  const [cpf, setCpf] = useState(client?.cpf);
+  const [phone, setPhone] = useState(client?.phone);
 
   function handleBack(){
     history.push('/');
   }
 
+  const handleCreate = useCallback(async () => {
+    const data = {
+      name,
+      address,
+      email,
+      cpf,
+      phone
+    }
+    const client = await createClient(data);
+    //set array
+  }, [name, address, email, cpf, phone]);
+
+  const handleUpdate = useCallback(async () => {
+    const data = {
+      id: state?.data?.client?.id,
+      name,
+      address,
+      email,
+      cpf,
+      phone
+    }
+    const client = await updateClient(data);
+    //set array
+  }, [state?.data?.client?.id, name, address, email, cpf, phone]);
+
+  const [title, setTitle] = useState<string>('ATUALIZAR');
+  const [buttonContent, setButtonContent] = useState<string>('CADASTRAR');
+  const [actionFunction, setActionFunction] = useState<() => {}|undefined>(handleUpdate);
+
+  /*
+  if(action === "VISUALIZAR"){
+    setTitle("VISUALIZAÇÃO");
+    setButtonContent('');
+    setActionFunction(undefined);
+  } else if(action === "SALVAR"){
+    setTitle("EDIÇÃO");
+    setButtonContent('SALVAR');
+    setActionFunction(handleUpdate);
+  } else {
+    setTitle("CADASTRO");
+    setButtonContent('CADASTRAR');
+    setActionFunction(handleCreate);
+  }
+  */
+
   return (
     <div className="client">
-      <Header title="PROPS" buttonContent="SALVAR" />
+      <Header title={title} buttonContent={buttonContent} action={actionFunction} />
       <Container>
         <a onClick={handleBack}>Voltar</a>
         <div className="couple">
@@ -31,8 +87,18 @@ function Client() {
             placeholder="Digite seu nome"
             label="Nome"
             value={name}
-            style={{color: 'white'}}
             onChange={(event) => setName(event.target.value)}
+            disabled={action==="VISUALIZAR"? true : false}
+            InputLabelProps={{
+              style: {
+                color: '#A5A7A4'
+              } 
+            }}
+            InputProps={{
+              style: {
+                color: 'white'
+              }
+            }}
           />
           <Input
             variant="filled"
@@ -40,6 +106,17 @@ function Client() {
             label="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
+            disabled={action==="VISUALIZAR"? true : false}
+            InputLabelProps={{
+              style: {
+                color: '#A5A7A4'
+              } 
+            }}
+            InputProps={{
+              style: {
+                color: 'white'
+              }
+            }}
           />
         </div>
           <Input
@@ -48,6 +125,17 @@ function Client() {
             label="Endereço"
             value={address}
             onChange={(event) => setAddress(event.target.value)}
+            disabled={action==="VISUALIZAR"? true : false}
+            InputLabelProps={{
+              style: {
+                color: '#A5A7A4'
+              } 
+            }}
+            InputProps={{
+              style: {
+                color: 'white'
+              }
+            }}
           />
           <div className="couple">
             <Input
@@ -56,6 +144,17 @@ function Client() {
               label="CPF"
               value={cpf}
               onChange={(event) => setCpf(event.target.value)}
+              disabled={action==="VISUALIZAR"? true : false}
+              InputLabelProps={{
+                style: {
+                  color: '#A5A7A4'
+                } 
+              }}
+              InputProps={{
+                style: {
+                  color: 'white'
+                }
+              }}
             />
             <Input
               variant="filled"
@@ -63,6 +162,17 @@ function Client() {
               label="Telefone"
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
+              disabled={action==="VISUALIZAR"? true : false}
+              InputLabelProps={{
+                style: {
+                  color: '#A5A7A4'
+                } 
+              }}
+              InputProps={{
+                style: {
+                  color: 'white'
+                }
+              }}
             />
           </div>
         </Container>

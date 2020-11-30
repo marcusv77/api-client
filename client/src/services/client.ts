@@ -38,7 +38,7 @@ export async function updateClient(updatedClient:IClient): Promise<ILitleClient>
   const {data} = await api.put(`api/client/${updatedClient.id}`, updatedClient);
   return data;
 }
-export async function DeleteClient(client:IClient): Promise<ILitleClient> {
-  const {data} = await api.put(`api/client/${client.id}`);
+export async function deleteClient(client:IClient): Promise<ILitleClient> {
+  const {data} = await api.delete(`api/client/${client.id}`);
   return data;
 }

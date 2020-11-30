@@ -3,12 +3,13 @@ import './styles.css';
 
 interface LabelProps{
   name: string;
+  className?: string;
 }
 
-const LabelContent = ({name}:LabelProps) => {
+const LabelContent = ({name, className}:LabelProps) => {
 
   return (
-    <div className="tablelabel">
+    <div className={"tablelabel " + className}>
       <p>{name}</p>
     </div>
   );

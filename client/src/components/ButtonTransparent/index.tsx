@@ -3,19 +3,10 @@ import './styles.css';
 
 interface ContainerProps{
   buttonContent: string;
+  action?: (any?:any) => void;
 }
 
-const HeaderSection = ({buttonContent}:ContainerProps) => {
-
-  function handleCreate(){
-
-  }
-
-  function handleUpdate(){
-    
-  }
-
-  const action = buttonContent==='CADASTRAR'? handleCreate : handleUpdate;
+const HeaderSection = ({buttonContent, action}:ContainerProps) => {
 
   return (
     <button onClick={action}>{buttonContent}</button>

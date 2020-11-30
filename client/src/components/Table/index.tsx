@@ -17,29 +17,13 @@ const TableContent = () => {
     handleList();
   }, [setClients]);
 
-  console.log(clients);
-
   return (
     <Table>
       <LabelLine />
 
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
-      <Line />
+      {clients.map((client) => (
+        <Line client={client} />
+      ))}
 
     </Table>
   );

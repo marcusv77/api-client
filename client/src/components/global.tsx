@@ -69,6 +69,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-self: center;
   padding: 30px;
+
+  @media (max-width: 420px){
+    padding: 20px;
+  }
 `;
 
 export const Section = styled.div`
@@ -82,6 +86,10 @@ export const Header = styled(Section)`
   align-items: center;
   justify-content: space-between;
   background-color: #27293D;
+
+  @media (max-width: 420px){
+    padding: 20px;
+  }
 `;
 
 export const Table = styled.div`
@@ -92,5 +100,7 @@ export const Table = styled.div`
 
 //INPUTS
 
-export const Input = styled(TextField)`
+export const Input = styled(TextField).attrs({
+  style: {marginBottom: 20},
+})`
 `;
