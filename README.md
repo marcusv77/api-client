@@ -1,4 +1,4 @@
-## INCOMPLETE
+## RECEIVING UPDATES
 
 <p align="center">
    <img src="./image/restful.png" alt="APIRESTful" width="400"/>
