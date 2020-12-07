@@ -32,7 +32,10 @@ This project was made using the follow technologies:
 
 ## How to consume the API
 
-Add the following link on your server file: https://fernandes-api-rest.herokuapp.com/
+Add the following link on your server file:
+```bash
+$ https://fernandes-api-rest.herokuapp.com/
+```
 
 ---
 
