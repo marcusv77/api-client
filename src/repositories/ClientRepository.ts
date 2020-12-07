@@ -12,7 +12,7 @@ export interface IClientsRepository {
 
 class ClientRepository implements IClientsRepository{
   public async create(data:IRequestCreateClient): Promise<IClient> {
-    const ids = await db('clients').insert(data);
+    const ids = await db('clients').insert(data).returning('id');
     const client:IClient = {
       ...data,
       id: ids[0]
