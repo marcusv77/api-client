@@ -34,7 +34,7 @@ This project was made using the follow technologies:
 
 Add the following link on your server file:
 ```bash
-$ https://fernandes-api-rest.herokuapp.com/
+https://fernandes-api-rest.herokuapp.com/
 ```
 
 ---
