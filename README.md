@@ -26,27 +26,13 @@ This project was made using the follow technologies:
 * [Typescript](https://www.typescriptlang.org/)     
 * [Node](https://nodejs.org/pt-br/)       
 * [Express](https://expressjs.com/)      
+* [Postgres](https://www.postgresql.org/)      
 
 ---
 
-## How to run
-```bash
-# Clone Repository
-$ git clone https://github.com/marcusv77/node-api.git
-```
-### Run API
+## How to consume the API
 
-```bash
-# Go to server folder
-$ cd node-api
-
-# Install Dependencies
-$ yarn install or npm install
-
-# Run Aplication
-$ yarn start or npm start
-```
-Access API at http://localhost:3333/
+Add the following link on your server file: https://fernandes-api-rest.herokuapp.com/
 
 ---
 
