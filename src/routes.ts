@@ -1,9 +1,9 @@
 import express from 'express';
-import CreateClient from '../controllers/Clients/CreateClient';
-import ListClients from '../controllers/Clients/ListClients';
-import ListClient from '../controllers/Clients/ListClient';
-import UpdateClient from '../controllers/Clients/UpdateClient';
-import DeleteClient from '../controllers/Clients/DeleteClient';
+import CreateClient from './controllers/Clients/CreateClient';
+import ListClients from './controllers/Clients/ListClients';
+import ListClient from './controllers/Clients/ListClient';
+import UpdateClient from './controllers/Clients/UpdateClient';
+import DeleteClient from './controllers/Clients/DeleteClient';
 
 const routes = express.Router();
 
