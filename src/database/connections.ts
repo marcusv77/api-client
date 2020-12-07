@@ -1,4 +1,4 @@
-import knex from  'knex';
+import knex from 'knex';
 import 'dotenv/config'
 
 const db = knex({
