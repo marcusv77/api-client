@@ -15,8 +15,8 @@
 
 ## Features
 
-* RESTful API for creating a CRUD interface.
-* Simple scope project to show the mastery of the technologies listed below, following the commands proposed by the DTI company.
+* RESTful API.
+* Simple scope project to show the mastery of the technologies listed below.
 
 ---
 
