@@ -26,7 +26,8 @@ This project was made using the follow technologies:
 * [Typescript](https://www.typescriptlang.org/)     
 * [Node](https://nodejs.org/pt-br/)       
 * [Express](https://expressjs.com/)      
-* [Postgres](https://www.postgresql.org/)      
+* [Postgres](https://www.postgresql.org/)     
+* [Yup](https://www.npmjs.com/package/yup)
 
 ---
 
