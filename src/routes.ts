@@ -11,10 +11,10 @@ routes.get("/", (req, res)=> {
   return res.json({success:true})
 });
 
-routes.post('/api/client', CreateClient.handle);
+routes.post('/api/client', CreateClient.validate, CreateClient.handle);
 routes.get('/api/clients', ListClients.handle);
-routes.get('/api/client/:id', ListClient.handle);
-routes.put('/api/client/:id', UpdateClient.handle);
-routes.delete('/api/client/:id', DeleteClient.handle);
+routes.get('/api/client/:id', ListClient.validate, ListClient.handle);
+routes.put('/api/client/:id', UpdateClient.validate, UpdateClient.handle);
+routes.delete('/api/client/:id', DeleteClient.validate, DeleteClient.handle);
 
 export default routes;
