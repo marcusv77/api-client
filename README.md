@@ -1,4 +1,4 @@
-## COMPLETE
+## RECEIVING UPDATES
 
 <p align="center">
    <img src="./image/Node.png" alt="Node" width="400"/>
