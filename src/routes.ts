@@ -1,4 +1,5 @@
 import express from 'express';
+
 import CreateClient from './controllers/Clients/CreateClient';
 import ListClients from './controllers/Clients/ListClients';
 import ListClient from './controllers/Clients/ListClient';
@@ -13,8 +14,8 @@ routes.get("/", (req, res)=> {
 
 routes.post('/api/client', CreateClient.validate, CreateClient.handle);
 routes.get('/api/clients', ListClients.handle);
-routes.get('/api/client/:id', ListClient.validate, ListClient.handle);
+routes.get('/api/client/:id', ListClient.handle);
 routes.put('/api/client/:id', UpdateClient.validate, UpdateClient.handle);
-routes.delete('/api/client/:id', DeleteClient.validate, DeleteClient.handle);
+routes.delete('/api/client/:id', DeleteClient.handle);
 
 export default routes;

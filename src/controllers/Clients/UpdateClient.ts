@@ -5,8 +5,8 @@ import * as yup from 'yup';
 class UpdateClient{
   public async handle(request:Request, response:Response) {
     const clientRepository = new ClientRepository();  
-    const client = {...request.body, id: request.params.id};
-    const exist = await clientRepository.findById(client.id);
+    const client = {...request.body, id: request.params?.id};
+    const exist = await clientRepository.findById(client?.id);
 
     if(exist === undefined){
       return response.status(400).json({
@@ -17,8 +17,8 @@ class UpdateClient{
     const confNum = await clientRepository.update(client);
 
     const clientUpdated = {
-      id: client.id,
-      name: client.name
+      id: client?.id,
+      name: client?.name
     }
     
     return response.json(clientUpdated); 
@@ -42,7 +42,6 @@ class UpdateClient{
       return res.status(400).json({message: 'Insira os campos corretamente.'});
     }
   }
-
 }
 
 export default new UpdateClient();

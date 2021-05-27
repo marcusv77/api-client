@@ -1,27 +1,39 @@
 import {Request, Response, NextFunction} from 'express';
 import ClientRepository from '../../repositories/ClientRepository';
+import {IRequestCreateClient} from '../../dto/Client';
 import * as yup from 'yup';
 
 class CreateClient{
   public async handle(request:Request, response:Response) {
-    const data = request.body;
-    const clientRepository = new ClientRepository();
-    const exist = await clientRepository.findByCpf(data.cpf);
+    try{
+      const data:IRequestCreateClient = {
+        name: request.body?.name,
+        address: request.body?.address,
+        phone: request.body?.phone,
+        email: request.body?.email,
+        cpf: request.body?.cpf,
+      };
 
-    if(exist !== undefined){
-      return response.status(400).json({
-        error: 'Client alredy exists.'
-      });    
+      const clientRepository = new ClientRepository();
+      const exist = await clientRepository.findByCpf(data?.cpf);
+
+      if(exist !== undefined){
+        return response.status(400).json({
+          error: 'Client alredy exists.'
+        });    
+      }
+
+      const client = await clientRepository.create(data);
+
+      const newClient = {
+        id: client?.id,
+        name: client?.name
+      }
+      
+      return response.json(newClient);
+    } catch(err){
+      return response.status(400).json({message: 'Algo de errado ocorreu.'});
     }
-
-    const client = await clientRepository.create(data);
-
-    const newClient = {
-      id: client.id,
-      name: client.name
-    }
-    
-    return response.json(newClient);
   }
 
   public async validate(req:Request, res:Response, next:NextFunction){
@@ -41,7 +53,6 @@ class CreateClient{
       return res.status(400).json({message: 'Insira os campos corretamente.'});
     }
   }
-
 }
 
 export default new CreateClient();
